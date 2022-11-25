@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block container %}
+
+<div class="container py-5 ">
+    <h1 class="text-center">Contact Us</h1>
+    {% if request.method == "POST" %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Your form details submitted successfull</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endif %}
+    <form action="/contact/" method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleInputName" class="form-label">Name</label>
+            <input type="text" name="name" class="form-control" id="exampleInputName" required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                required>
+            <div id="emailHelp" class="form-text">We'll ever share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputphonenumber" class="form-label">Phone</label>
+            <input type="number" name="phone" class="form-control" id="exampleInputphonenumber" required>
+        </div>
+        <div class="form-floating mb-3">
+            <textarea class="form-control" name="about" placeholder="Leave a comment here" id="floatingTextarea2"
+                style="height: 100px"></textarea>
+            <label for="floatingTextarea2">About course</label>
+        </div>
+        <input type="submit" class="btn btn-danger" value="SEND MESSAGE">
+    </form>
+</div>
+
+
+{% endblock %}
