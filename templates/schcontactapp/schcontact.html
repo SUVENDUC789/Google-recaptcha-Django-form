@@ -3,9 +3,16 @@
 
 <div class="container py-5 ">
     <h1 class="text-center">Contact Us</h1>
-    {% if request.method == "POST" %}
+    {% if request.method == "POST" and l == True %}
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         <strong>Your form details submitted successfull</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endif %}
+
+    {% if request.method == "POST" and l == False %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Your form details not submitted </strong>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     {% endif %}
@@ -30,9 +37,12 @@
                 style="height: 100px"></textarea>
             <label for="floatingTextarea2">About course</label>
         </div>
+        <div class="g-recaptcha mb-3" data-sitekey="6LdbcDQjAAAAADfi0YQtItfmI5N8EEqjDCwcBSP1"></div>
         <input type="submit" class="btn btn-danger" value="SEND MESSAGE">
     </form>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </div>
 
 
 {% endblock %}
+
