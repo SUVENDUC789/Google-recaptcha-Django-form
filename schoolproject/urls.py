@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from schcontactapp import views as schcon
 from joinourteamapp import views as jot
+from enrollapp import views as enr
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('contact/', schcon.schcontact, name='schcontact'),
+    path('enroll/', enr.form, name='enroll'),
     path('joinourteam/', jot.jointeam, name='jointeam')
 ]

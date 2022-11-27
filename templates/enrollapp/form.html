@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block container %}
+
+<div class="container py-5 ">
+    <h1 class="text-center">ABC Akademia International School</h1>
+    <h4 class="text-center">Enquiry Form</h1>
+        {% if request.method == "POST" and l == True %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Your form details submitted successfull</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endif %}
+
+        {% if request.method == "POST" and l == False %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Your form details not submitted </strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endif %}
+        <form action="/enroll/" method="post">
+
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="WriteFirstName" class="form-label">First Name</label>
+                <input type="text" name="fname" class="form-control" id="WriteFirstName" required>
+            </div>
+            <div class="mb-3">
+                <label for="WriteLastName" class="form-label">Last Name</label>
+                <input type="text" name="lname" class="form-control" id="WriteLastName" required>
+            </div>
+            <div class="mb-3">
+                <label for="WriteEmailHere" class="form-label">Email address</label>
+                <input type="email" name="email" class="form-control" id="WriteEmailHere" aria-describedby="emailHelp"
+                    required>
+            </div>
+            <div class="mb-3">
+                <label for="AddPhoneNumber" class="form-label">Phone</label>
+                <input type="number" name="phone" class="form-control" id="AddPhoneNumber" required>
+            </div>
+            <div class="mb-3">
+                <label for="gardenName" class="form-label">Guardian's Name</label>
+                <input type="text" name="GuardiansName" class="form-control" id="gardenName" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="selectGrade" class="form-label">Grade</label>
+                <select class="form-select" name="grade" aria-label="Default select example" id="selectGrade">
+                    <option selected value="None">Enquiry for Grade</option>
+                    <option value="Nursery">Nursery</option>
+                    <option value="KG-1">KG-1</option>
+                    <option value="KG-2">KG-2</option>
+                    <option value="I">I</option>
+                    <option value="II">II</option>
+                    <option value="III">III</option>
+                    <option value="IV">IV</option>
+                    <option value="V">V</option>
+                    <option value="VI">VI</option>
+                    <option value="VII">VII</option>
+                    <option value="VIII">VIII</option>
+                    <option value="IX">IX</option>
+                    <option value="X">X</option>
+                    <option value="XI">XI</option>
+                    <option value="XII">XII</option>
+                </select>
+            </div>
+            <div class="g-recaptcha mb-3" data-sitekey="6LdbcDQjAAAAADfi0YQtItfmI5N8EEqjDCwcBSP1"></div>
+            <input type="submit" class="btn btn-danger" value="Submit">
+        </form>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</div>
+
+
+{% endblock %}

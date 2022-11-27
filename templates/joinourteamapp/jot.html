@@ -20,12 +20,12 @@
     <form action="/joinourteam/" method="post">
         {% csrf_token %}
         <div class="mb-3">
-            <label for="exampleInputName" class="form-label">First Name</label>
-            <input type="text" name="fname" class="form-control" id="exampleInputName" required>
+            <label for="EnterFirstName" class="form-label">First Name</label>
+            <input type="text" name="fname" class="form-control" id="EnterFirstName" required>
         </div>
         <div class="mb-3">
-            <label for="exampleInputName" class="form-label">Last Name</label>
-            <input type="text" name="lname" class="form-control" id="exampleInputName" required>
+            <label for="EnterSecondName" class="form-label">Last Name</label>
+            <input type="text" name="lname" class="form-control" id="EnterSecondName" required>
         </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -34,8 +34,8 @@
             <div id="emailHelp" class="form-text">We'll ever share your email with anyone else.</div>
         </div>
         <div class="mb-3">
-            <label for="exampleInputphonenumber" class="form-label">Phone</label>
-            <input type="number" name="phone" class="form-control" id="exampleInputphonenumber" required>
+            <label for="EnterPhoneNumber" class="form-label">Phone</label>
+            <input type="number" name="phone" class="form-control" id="EnterPhoneNumber" required>
         </div>
         <div class="form-floating mb-3">
             <textarea class="form-control" name="Position" placeholder="Leave a comment here" id="floatingTextarea2"
