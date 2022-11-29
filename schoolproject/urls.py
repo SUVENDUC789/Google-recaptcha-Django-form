@@ -21,7 +21,7 @@ from enrollapp import views as enr
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('contact/', schcon.schcontact, name='schcontact'),
+    path('', schcon.schcontact, name='schcontact'),
     path('enroll/', enr.form, name='enroll'),
     path('joinourteam/', jot.jointeam, name='jointeam')
 ]
